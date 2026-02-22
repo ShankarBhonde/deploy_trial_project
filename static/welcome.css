@@ -1,0 +1,75 @@
+/* Reset */
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4CAF50, #2E8B57);
+}
+
+/* TOP ALERT MESSAGE */
+.alert_msg {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #fff3cd;
+    color: #856404;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* CENTER WELCOME SECTION */
+.welcome {
+    height: calc(100vh - 120px); /* space for alert */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Welcome text animation (optional) */
+.welcome h1 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    animation: slideFadeDown 1.5s ease forwards;
+}
+
+/* Button animation */
+.welcome button {
+    padding: 12px 32px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: white;
+    color: #2E8B57;
+    animation: fadeUp 2s ease forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.welcome button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Animations ONLY for welcome */
+@keyframes slideFadeDown {
+    from {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
