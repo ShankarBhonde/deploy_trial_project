@@ -1,6 +1,6 @@
 #from flask import Flask, render_template, request,redirect,url_for
 from flask import Flask, render_template, request, redirect, url_for, flash
-from flask_mysqldb import MySQL
+#from flask_mysqldb import MySQL
 from ultralytics import YOLO
 
 import joblib
@@ -67,7 +67,7 @@ def soil():
 
 
 
-
+'''
 #mysql connection 
 app.secret_key="secrete123"
 #mysql configuration
@@ -104,7 +104,7 @@ def feedback():
     return " seccussfull Done , pls Go Back"
 
 
-
+'''
 
 #---------------------------------------------------------------------------
 #plant disease detection 
@@ -162,6 +162,7 @@ def plant_camera():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
