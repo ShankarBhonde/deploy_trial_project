@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='feedback.css') }}">
+</head>
+<body>
+
+
+<!-- Flash Messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, msg in messages %}
+      <div class="result {{ category }}">
+         <h1> {{ msg }}</h1>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+
+
+<div class="container1">
+    <h2>User Feedback</h2>
+
+    <!-- Flash Messages -->
+   
+
+    <form action="{{ url_for('feedback') }}" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+
+        <input type="text" name="mo_no" placeholder="Your mo_no" required>
+
+        <textarea name="message" placeholder="Your Feedback" required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+</div>
+
+</body>
+</html>

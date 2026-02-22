@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='welcome.css') }}">
+</head>
+<body>
+    <div class="alert_msg">
+        <h3>Guided by ThinkQoutient Software Pvt. Ltd. Team</h3>
+         <h1>This is Application based on AI/ML </h1>
+        <h3>Please Note one thing this predictions depends on Historical data and we will do also update the every month data</h3>
+    </div><br>
+    <div class="welcome">
+       
+        <h1>Welcome</h1>
+        <button onclick="window.location.href='{{ url_for('index') }}'">
+            Enter
+        </button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="section">
+    <h2 class="section-title">🌿 Plant Leaf Disease Detection</h2>
+
+    <div class="card-container">
+
+        <!-- Upload Image -->
+        <form action="/plant_upload" method="POST" enctype="multipart/form-data" class="card">
+            <h3>📁 Upload Image</h3>
+            <input type="file" name="image" required>
+            <br><br>
+            <button type="submit">Predict</button>
+        </form>
+
+        <!-- Camera -->
+        <form action="/plant_camera" method="POST" class="card">
+            <h3>📷 Camera</h3>
+            <p>Capture leaf image using camera</p>
+            <button type="submit">Capture & Predict</button>
+        </form>
+
+    </div>
+
+    {% if image_path %}
+    <div style="margin-top:40px; text-align:center;">
+        <h3>Input Image</h3>
+        <img src="{{ image_path }}" width="300"
+             style="border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.15);">
+    </div>
+    {% endif %}
+
+    {% if prediction %}
+    <div style="margin-top:20px; text-align:center;">
+        <h3>🌱 Disease Detected: <span style="color:#1b5e20">{{ prediction }}</span></h3>
+        <h4>Confidence: {{ confidence | round(2) }}%</h4>
+    </div>
+    {% endif %}
+
+</section>
+
+{% endblock %}
